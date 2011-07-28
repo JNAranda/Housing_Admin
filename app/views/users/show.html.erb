@@ -1,0 +1,23 @@
+<table class="profile">
+	<tr>
+		<td class= "main">
+			<h1>
+			<%= @user.name %>
+			</h1>
+			<%= render 'follow' if signed_in? %>
+			
+			<% if @user.briefs.any? %>
+				<table class="briefs" summary="Resident Briefs">
+					<%= render @briefs %>	
+				</table>
+				<%= will_paginate @briefs %>
+			<% end %>
+		</td>
+		<td class="sidebar round">
+			<strong> Name </strong><%= @user.name %><br />
+			<strong> URL </strong> <%= link_to user_path(@user), @user %><br />
+			<strong> Briefs </strong> <%= @user.briefs.count %><br />
+			<%= render 'shared/stats' %>
+		</td>
+	</tr>
+</table>

@@ -1,0 +1,2 @@
+$("follow").update("<%= escape_javascript(render('users/unfollows')) %>")
+$("followers").update('<%= "#{@user.followers.count} followers" %>')

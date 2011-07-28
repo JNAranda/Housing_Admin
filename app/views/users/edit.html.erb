@@ -1,0 +1,10 @@
+<h1>Edit Intern</h1>
+
+<%= form_for(@user) do |f| %>
+  <%= render 'shared/error_messages', :object => f.object %>
+  <%= render 'fields', :f => f %>	
+  <div class="actions">
+    <%= f.submit "Lets Go" %>
+  </div>
+<% end %>
+

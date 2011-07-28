@@ -1,0 +1,4 @@
+<%= form_for(current_user.relations.build(:stalked_id => @user.id), :remote => true) do |f| %>
+	<div><%= f.hidden_field :stalked_id %></div>
+	<div class="actions"><%= f.submit "Stalk" %></div>
+<% end %>

@@ -1,0 +1,20 @@
+<table summary="Information about following/followers">
+  <tr>
+    <td class="main">
+      <h1><%= @title %></h1>
+
+      <% if @users.any? %>
+        <ul class="users">
+          <%= render @users %>
+        </ul>
+        <%= will_paginate @users %>
+      <% end %>
+    </td>
+    <td class="sidebar round">
+      <strong>Name</strong> <%= @user.name %><br />
+      <strong>URL</strong> <%= link_to user_path(@user), @user %><br />
+      <strong>Briefs</strong> <%= @user.briefs.count %>
+      <%= render 'shared/stats' %>
+    </td>
+  </tr>
+</table>

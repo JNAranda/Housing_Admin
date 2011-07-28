@@ -1,0 +1,2 @@
+module BriefsHelper
+end

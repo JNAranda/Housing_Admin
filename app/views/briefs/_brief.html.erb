@@ -1,0 +1,14 @@
+<tr>
+	<td class="brief">
+		<span class="content" ><%= brief.content %></span>
+		<span class="time" >
+			Posted <%= time_ago_in_words(brief.created_at) %> ago.
+		</span>
+	</td>
+	<% if current_user?(brief.user || admin.user)%>
+	<td>
+	<%= link_to "Delete", brief, :method => :delete, :confirmation => "Really?", 
+										:title => brief.content %>
+	</td>
+	<% end %>
+</tr>
